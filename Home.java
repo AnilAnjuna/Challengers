@@ -1,6 +1,7 @@
 
 import java.util.Vector;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 
 /*
  * To change this template, choose Tools | Templates
@@ -17,15 +18,16 @@ public class Home extends javax.swing.JFrame {
     /**
      * Creates new form Home
      */
-    Vector det = new Vector();
-    Vector n1;   
+    Vector det2 = new Vector();  
+    Vector n2;
     
     int id;
     String fname;
     String sname;
     String title;
     String bname;
-    Tree mytree = new Tree();
+    
+    Tree mytree = new Tree();   // object of Tree class to using all methods
  
     
     public Home() {
@@ -289,28 +291,30 @@ public class Home extends javax.swing.JFrame {
     }                                       
 
     private void btnInsertActionPerformed(java.awt.event.ActionEvent evt) {                                          
-        
+
         id = Integer.parseInt(txtisbn.getText());
-        fname = txtfname.getText();
-        sname = txtsname.getText();
+        fname=txtfname.getText();
+        sname=txtsname.getText();
         title = cmbtitle.getSelectedItem().toString();
-        bname = txtbookname.getText();
+        bname=txtbookname.getText();
+
+        n2 = new Vector();                 // create vector, to assign input data  
         
-//        n1 = new Vector();
-//        
-//        n1.add(txtisbn.getText());
-//        n1.add(txtfname.getText());
-//        n1.add(txtsname.getText());
-//        n1.add(cmbtitle.getSelectedItem().toString());
-//        n1.add(txtbookname.getText());        
-//        
-//        det.add(n1);
-//        System.out.println(det);
-//        
-//        DefaultTableModel dtm = (DefaultTableModel) tableBook.getModel();
-//        dtm.addRow(det);     
+       
+        n2.add(txtisbn.getText());
+        n2.add(txtfname.getText());
+        n2.add(txtsname.getText());        
+        n2.add(cmbtitle.getSelectedItem());
+        n2.add(txtbookname.getText());
+
+        det2.add(n2);                    // add n2 vector data to det2 vector
+        System.out.println(det2);
+
+        //add data into jtable  
+       DefaultTableModel dtm = (DefaultTableModel) tableBook.getModel();
+       dtm.addRow(det2);            
         
-        mytree.insert(id, fname, sname,title,bname);
+        mytree.insert(id,fname,sname,title,bname);
            
     }                                         
 
@@ -327,11 +331,11 @@ public class Home extends javax.swing.JFrame {
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {                                          
         
    
-        int t1 = Integer.parseInt(txtsearch.getText());
-        TNode findingnode = mytree.searchNode(t1);        
+        int t1 = Integer.parseInt(txtsearch.getText());     // get searh element from textfield
+        TNode findingnode = mytree.searchNode(t1);          // pass to Tree class
         
         if(findingnode != null){            
-                        
+                        System.out.println(findingnode.id);
             System.out.println("\n ID found complete"); 
                 
                                }
