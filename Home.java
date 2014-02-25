@@ -17,8 +17,14 @@ public class Home extends javax.swing.JFrame {
     /**
      * Creates new form Home
      */
-    Vector det2 = new Vector();  
-    Vector n2;
+//    Vector det2 = new Vector();  
+//    Vector n2;
+    
+    String title2[]={"ID","fName","sname","title","bookname"};
+    private Object[][] types = null;
+    DefaultTableModel model = new DefaultTableModel(types,title2);
+    
+    private int current = -1;
     
     int id;
     String fname;
@@ -182,6 +188,11 @@ public class Home extends javax.swing.JFrame {
                 "ISBN", "fname", "sname", "title", "bookname"
             }
         ));
+        tableBook.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableBookMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tableBook);
 
         jLabel5.setText("Book Name");
@@ -218,9 +229,7 @@ public class Home extends javax.swing.JFrame {
                         .addGap(33, 33, 33)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(btndelete, javax.swing.GroupLayout.DEFAULT_SIZE, 67, Short.MAX_VALUE)
-                                    .addComponent(btnInsert, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(btnInsert, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(btnInOrder, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -236,8 +245,10 @@ public class Home extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 508, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(btndelete, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addComponent(btnSearch)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(txtsearch)))
                 .addContainerGap())
         );
@@ -260,8 +271,7 @@ public class Home extends javax.swing.JFrame {
                     .addComponent(jLabel3)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(txtsname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnPostOrder)
-                        .addComponent(btndelete)))
+                        .addComponent(btnPostOrder)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
@@ -274,7 +284,8 @@ public class Home extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtsearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSearch))
+                    .addComponent(btnSearch)
+                    .addComponent(btndelete))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -301,6 +312,57 @@ public class Home extends javax.swing.JFrame {
                 
     }
     
+////    private void fillForm(int position){
+////        
+////        
+////        
+////        //System.out.println("nadsadjak");
+////        
+////        txtisbn.setText("10");
+////        
+////        txtisbn.setText(types[position][0].toString());  
+////        txtfname.setText(types[position][1].toString());        
+////        txtsname.setText(types[position][2].toString());
+////        cmbtitle.setSelectedItem(types[position][3].toString());
+////        txtbookname.setText(types[position][4].toString());
+////        
+////        
+////        
+////                         }
+    
+        
+//     public void fillTable(){
+//        
+////        TNode t1 = new TNode(id,fname,sname,title,bname,null,null);
+////        
+////        String[] arr = new String[5];       
+////        
+////        arr[0] = String.valueOf(t1.getId());
+////        arr[1] = t1.getFname();
+////        arr[2] = t1.getSname();
+////        arr[3] = t1.getTitle();
+////        arr[4] = t1.getBname();
+//        
+//////        arr[0] = "jjjj";
+//////        arr[1] = "jskdjfks";
+//////        arr[2] = "hadhja";
+//////        arr[3] = "bhhada";
+//////        arr[4] = "ndmasmnam";
+//////        
+//////        System.out.println(arr[0]);
+//        
+////        model.addRow(arr);
+////        tableBook.setModel(model);
+//        
+//      //  tableBook.addRowSelectionInterval(id, id);
+//        
+////        String title2[]={"ID","fName","sname","title","bookname"};
+////        DefaultTableModel model = new DefaultTableModel(t1.getId(),title2);
+//           //     add
+//        //tableBook.setModel(model);
+//        
+//                            }
+    
     private void btnInsertActionPerformed(java.awt.event.ActionEvent evt) {                                          
 
         id    = Integer.parseInt(txtisbn.getText());
@@ -308,25 +370,42 @@ public class Home extends javax.swing.JFrame {
         sname =txtsname.getText();
         title = cmbtitle.getSelectedItem().toString();
         bname =txtbookname.getText();
-
-        n2 = new Vector();                 // create vector, to assign input data  
         
-       
-        n2.add(txtisbn.getText());
-        n2.add(txtfname.getText());
-        n2.add(txtsname.getText());        
-        n2.add(cmbtitle.getSelectedItem());
-        n2.add(txtbookname.getText());
+        mytree.insert(id,fname,sname,title,bname);
+        
+        TNode t1 = new TNode(id,fname,sname,title,bname,null,null);
+        
+        String[] arr = new String[5];       
+        
+        arr[0] = String.valueOf(t1.getId());
+        arr[1] = t1.getFname();
+        arr[2] = t1.getSname();
+        arr[3] = t1.getTitle();
+        arr[4] = t1.getBname();  
+        
+        model.addRow(arr);
+        tableBook.setModel(model);
+        clear();
 
-        det2.add(n2);                    // add n2 vector data to det2 vector
-        System.out.println(det2);
+//////        n2 = new Vector();                 // create vector, to assign input data  
+//////        
+//////       
+//////        n2.add(txtisbn.getText());
+//////        n2.add(txtfname.getText());
+//////        n2.add(txtsname.getText());        
+//////        n2.add(cmbtitle.getSelectedItem());
+//////        n2.add(txtbookname.getText());
+//////
+//////        det2.add(n2);                    // add n2 vector data to det2 vector
+//////        System.out.println(det2);
 
         //add data into jtable  
 //       DefaultTableModel dtm = (DefaultTableModel) tableBook.getModel();
 //       dtm.addRow(det2);            
         
-        mytree.insert(id,fname,sname,title,bname);
-        clear();
+        
+//        fillTable();
+       
            
     }                                         
 
@@ -356,7 +435,7 @@ public class Home extends javax.swing.JFrame {
 //        else
 //             System.out.println("\n ID found not complete");
         
-        clear();
+        
         
     }                                         
 
@@ -413,7 +492,7 @@ public class Home extends javax.swing.JFrame {
     private void btndeleteActionPerformed(java.awt.event.ActionEvent evt) {                                          
 
         int d1 = Integer.parseInt(txtsearch.getText());
-//        mytree.delete(d1);
+        mytree.delete(d1);
         
         
         
@@ -443,6 +522,11 @@ public class Home extends javax.swing.JFrame {
 //        
 //        
     }                                         
+
+    private void tableBookMouseClicked(java.awt.event.MouseEvent evt) {                                       
+       
+      
+    }                                      
 
     /**
      * @param args the command line arguments
