@@ -1,7 +1,6 @@
 
 import java.util.Vector;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableModel;
 
 /*
  * To change this template, choose Tools | Templates
@@ -53,7 +52,7 @@ public class Home extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         cmbtitle = new javax.swing.JComboBox();
         btnInsert = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btndelete = new javax.swing.JButton();
         btnclear = new javax.swing.JButton();
         btnInOrder = new javax.swing.JButton();
         btnPreOrder = new javax.swing.JButton();
@@ -90,10 +89,10 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Delete");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btndelete.setText("Delete");
+        btndelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btndeleteActionPerformed(evt);
             }
         });
 
@@ -220,7 +219,7 @@ public class Home extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 67, Short.MAX_VALUE)
+                                    .addComponent(btndelete, javax.swing.GroupLayout.DEFAULT_SIZE, 67, Short.MAX_VALUE)
                                     .addComponent(btnInsert, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -262,7 +261,7 @@ public class Home extends javax.swing.JFrame {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(txtsname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(btnPostOrder)
-                        .addComponent(jButton2)))
+                        .addComponent(btndelete)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
@@ -290,13 +289,25 @@ public class Home extends javax.swing.JFrame {
         
     }                                       
 
+    public void clear(){
+        
+        txtisbn.setText("");
+        txtsname.setText("");
+        txtfname.setText("");
+        txtsname.setText("");
+        txtbookname.setText("");
+        txtsearch.setText("");
+        
+                
+    }
+    
     private void btnInsertActionPerformed(java.awt.event.ActionEvent evt) {                                          
 
-        id = Integer.parseInt(txtisbn.getText());
-        fname=txtfname.getText();
-        sname=txtsname.getText();
+        id    = Integer.parseInt(txtisbn.getText());
+        fname =txtfname.getText();
+        sname =txtsname.getText();
         title = cmbtitle.getSelectedItem().toString();
-        bname=txtbookname.getText();
+        bname =txtbookname.getText();
 
         n2 = new Vector();                 // create vector, to assign input data  
         
@@ -311,10 +322,11 @@ public class Home extends javax.swing.JFrame {
         System.out.println(det2);
 
         //add data into jtable  
-       DefaultTableModel dtm = (DefaultTableModel) tableBook.getModel();
-       dtm.addRow(det2);            
+//       DefaultTableModel dtm = (DefaultTableModel) tableBook.getModel();
+//       dtm.addRow(det2);            
         
         mytree.insert(id,fname,sname,title,bname);
+        clear();
            
     }                                         
 
@@ -325,6 +337,7 @@ public class Home extends javax.swing.JFrame {
         txtfname.setText("");
         txtsname.setText("");
         txtbookname.setText("");
+        txtsearch.setText("");
         
     }                                        
 
@@ -332,16 +345,18 @@ public class Home extends javax.swing.JFrame {
         
    
         int t1 = Integer.parseInt(txtsearch.getText());     // get searh element from textfield
-        TNode findingnode = mytree.searchNode(t1);          // pass to Tree class
+        boolean findingnode = mytree.searchNode(t1);          // pass to Tree class
         
-        if(findingnode != null){            
-                        System.out.println(findingnode.id);
-            System.out.println("\n ID found complete"); 
-                
-                               }
+//        if(findingnode != null){            
+//                        System.out.println(findingnode.id);
+//            System.out.println("\n ID found complete"); 
+//                
+//                               }
+//        
+//        else
+//             System.out.println("\n ID found not complete");
         
-        else
-             System.out.println("\n ID found not complete");        
+        clear();
         
     }                                         
 
@@ -395,10 +410,15 @@ public class Home extends javax.swing.JFrame {
 //        mytree.postOrderTraverse(mytree.root); 
     }                                            
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-               
-//        Tree mytree = new Tree();
-//                
+    private void btndeleteActionPerformed(java.awt.event.ActionEvent evt) {                                          
+
+        int d1 = Integer.parseInt(txtsearch.getText());
+//        mytree.delete(d1);
+        
+        
+        
+        
+        
 //                int t1 = Integer.parseInt(txtsearch.getText());
 //                TNode findingnode = mytree.delete(t1);
 //                
@@ -422,7 +442,7 @@ public class Home extends javax.swing.JFrame {
 //        
 //        
 //        
-    }                                        
+    }                                         
 
     /**
      * @param args the command line arguments
@@ -467,8 +487,8 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JButton btnPreOrder;
     private javax.swing.JButton btnSearch;
     private javax.swing.JButton btnclear;
+    private javax.swing.JButton btndelete;
     private javax.swing.JComboBox cmbtitle;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
