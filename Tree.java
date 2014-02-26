@@ -202,7 +202,7 @@ public class Tree {
              {
                  p2 = right;
                  p = right;
-                 while (p.getLeft() != null)       //set element
+                 while (p.getLeft() != null)       //get element
                      p = p.getLeft();
                  p.setLeft(left);
                  return p2;
@@ -214,6 +214,13 @@ public class Tree {
              n = delete(root.getLeft(), k); //checking id with k and settting up the left element so out k element in the tree
              root.setLeft(n);                //set that place to next referance
          }
+         
+          else
+         {
+             n = delete(root.getRight(), k);   //checking id with k and setting up the right element so out k element in the tree
+             root.setRight(n);             
+         }
+         return root;                 //return TNode
          
          
      }
