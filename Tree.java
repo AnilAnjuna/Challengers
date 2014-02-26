@@ -169,8 +169,12 @@ public class Tree {
              //System.out.println(+k+" "+"is not in the tree");
          else
          {
+             root = delete(root, k);
+             //System.out.println(k+ " deleted from the tree");
        
-     }
+         }
+         
+     }     
     
    
     
