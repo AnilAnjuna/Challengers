@@ -74,15 +74,15 @@ public class Tree {
                                          }
 //    
      public void preOrderTraverse(TNode n){     //begining preorder traverse
-//        if (n == null)
-//            return;
-//            else
-//              {
+         if (n == null)                         //check whether node is null
+            return;
+            else
+              {
 //                System.out.print(n.id + "\t");
 //                postOrderTraverse(n.left);
 //                postOrderTraverse(n.right);                
 //                
-//              }          
+               }          
                                         }
 //    
 //    public void postOrderTraverse(TNode n){
