@@ -378,6 +378,29 @@ public class Home extends javax.swing.JFrame {
             
         }
         
+        else{
+             
+             
+        mytree.insert(id,fname,sname,title,bname);
+        
+        TNode t1 = new TNode(id,fname,sname,title,bname,null,null);
+        
+        String[] arr = new String[5];       
+        
+        arr[0] = String.valueOf(t1.getId());
+        arr[1] = t1.getFname();
+        arr[2] = t1.getSname();
+        arr[3] = t1.getTitle();
+        arr[4] = t1.getBname();  
+        
+        model.addRow(arr);
+        tableBook.setModel(model);
+            
+            
+        }
+        
+        clear();
+        
     //    mytree.insert(id,fname,sname,title,bname);
         
      //   TNode t1 = new TNode(id,fname,sname,title,bname,null,null);
