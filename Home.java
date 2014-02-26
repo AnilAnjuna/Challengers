@@ -565,6 +565,17 @@ public class Home extends javax.swing.JFrame {
         inOrder(root);                                 //pasising value to root node
         
                             }
+                            
+    public void inOrder(TNode r){
+        
+        if(r!=null){            
+            inOrder(r.getLeft());                      
+            model2.addRow(new Object[]{r.id,r.fname,r.sname,r.title,r.bname});   //set data to table
+            inOrder(r.getRight());           
+            
+        }
+        
+    }                            
 
     private void tableBookMouseClicked(java.awt.event.MouseEvent evt) {                                       
        
