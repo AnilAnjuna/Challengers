@@ -370,21 +370,23 @@ public class Home extends javax.swing.JFrame {
         title = cmbtitle.getSelectedItem().toString();
         bname =txtbookname.getText();
         
-        mytree.insert(id,fname,sname,title,bname);
+        TNode result = mytree.searchNode(id);    // to check whether assigning isbn is currently in tree
         
-        TNode t1 = new TNode(id,fname,sname,title,bname,null,null);
+    //    mytree.insert(id,fname,sname,title,bname);
         
-        String[] arr = new String[5];       
+     //   TNode t1 = new TNode(id,fname,sname,title,bname,null,null);
         
-        arr[0] = String.valueOf(t1.getId());
-        arr[1] = t1.getFname();
-        arr[2] = t1.getSname();
-        arr[3] = t1.getTitle();
-        arr[4] = t1.getBname();  
+     //   String[] arr = new String[5];       
         
-        model.addRow(arr);
-        tableBook.setModel(model);
-        clear();
+     //   arr[0] = String.valueOf(t1.getId());
+     //   arr[1] = t1.getFname();
+      //  arr[2] = t1.getSname();
+     //   arr[3] = t1.getTitle();
+      //  arr[4] = t1.getBname();  
+        
+      //  model.addRow(arr);
+      //  tableBook.setModel(model);
+       // clear();
 
 //////        n2 = new Vector();                 // create vector, to assign input data  
 //////        
