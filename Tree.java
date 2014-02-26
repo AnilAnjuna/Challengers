@@ -198,6 +198,15 @@ public class Tree {
                  p = left;                      //assigning left
                  return p;
              }
+              else                              //is there both elements
+             {
+                 p2 = right;
+                 p = right;
+                 while (p.getLeft() != null)       //set element
+                     p = p.getLeft();
+                 p.setLeft(left);
+                 return p2;
+             }
              
          }
          
