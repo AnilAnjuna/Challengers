@@ -209,6 +209,11 @@ public class Tree {
              }
              
          }
+         if (k < root.getId())
+         {
+             n = delete(root.getLeft(), k); //checking id with k and settting up the left element so out k element in the tree
+             root.setLeft(n);                //set that place to next referance
+         }
          
          
      }
