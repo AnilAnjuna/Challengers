@@ -165,6 +165,10 @@ public class Tree {
          if (isEmpty())
              //System.out.println("Tree is Empty");
              JOptionPane.showMessageDialog(null,"Tree is Empty");
+         else if (searchNode(k) != true)
+             //System.out.println(+k+" "+"is not in the tree");
+         else
+         {
        
      }
     
