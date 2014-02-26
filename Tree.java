@@ -160,6 +160,13 @@ public class Tree {
         
         
                                   }
+    public void delete(int k)
+     {
+         if (isEmpty())
+             //System.out.println("Tree is Empty");
+             JOptionPane.showMessageDialog(null,"Tree is Empty");
+       
+     }
     
    
     
