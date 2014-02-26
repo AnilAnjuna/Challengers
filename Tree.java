@@ -78,10 +78,10 @@ public class Tree {
             return;
             else
               {
-//                System.out.print(n.id + "\t");
-//                postOrderTraverse(n.left);
-//                postOrderTraverse(n.right);                
-//                
+                System.out.print(n.id + "\t");
+                postOrderTraverse(n.left);
+                postOrderTraverse(n.right);                
+                
                }          
                                         }
 //    
