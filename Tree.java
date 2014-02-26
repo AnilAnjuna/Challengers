@@ -147,14 +147,7 @@ public class Tree {
         
         }
         
-         if(temp != null){
-                        System.out.println("\n ID found complete");
-                        System.out.println("search element"+": "+temp.id+", "+temp.fname+", "+temp.sname+", "+temp.title+", "+temp.bname);
-                        status = true;
-                         }
-        
-        else
-             System.out.println("\n ID found not complete");
+         
         
         return status;   
         
