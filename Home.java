@@ -1,4 +1,3 @@
-
 import java.util.Vector;
 import javax.swing.table.DefaultTableModel;
 
@@ -493,6 +492,8 @@ public class Home extends javax.swing.JFrame {
 
         int d1 = Integer.parseInt(txtsearch.getText());
         mytree.delete(d1);
+        
+        clear();
         
         
         
