@@ -483,8 +483,8 @@ public class Home extends javax.swing.JFrame {
 //          
 //                                          }
 //        
-//        System.out.println("\n-----------------------------------------");
-//        mytree.inOrderTraverse(mytree.root);
+       System.out.println("\n-----------------------------------------");
+       mytree.inOrderTraverse(mytree.root);
 //       
     }                                          
 
