@@ -425,13 +425,13 @@ public class Home extends javax.swing.JFrame {
         int t1 = Integer.parseInt(txtsearch.getText());     // get searh element from textfield
         TNode findingnode = mytree.searchNode(t1);          // pass to Tree class
         
-//        if(findingnode != null){            
+    if(findingnode != null){            
 //                        System.out.println(findingnode.id);
 //            System.out.println("\n ID found complete"); 
 //                
-//                               }
+                               }
 //        
-//        else
+        else
 //             System.out.println("\n ID found not complete");
         
         
