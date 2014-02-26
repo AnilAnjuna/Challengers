@@ -19,41 +19,41 @@ public class Tree {
         
                  }
     
-    public boolean isEmpty(){        
+    public boolean isEmpty(){        //to check array is empty and get boolean return true or false
         
         return root == null;
         
                             }
     
-    public void insert(int id,String fname,String sname,String title,String bname){
+    public void insert(int id,String fname,String sname,String title,String bname){   //get parameters from home which is inputed by textfields
         
                 
-        TNode newnode = new TNode(id,fname,sname,title,bname,null,null);
+        TNode newnode = new TNode(id,fname,sname,title,bname,null,null);     //pass the data to TNode class with to nulls because of left , right variables
         
         if(isEmpty())           
-            root = newnode;
+            root = newnode;             // check whwther tree is empty
         
         else{
             
-            TNode temp = root;
-            TNode parent = root;
+            TNode temp = root;         //assign root to two elements as parent and temp
+            TNode parent = root; 
             
-             while(temp != null)
+             while(temp != null)       //is there root 
              {
                  parent = temp;
-                 if(temp.id > id)
+                 if(temp.id > id)              // check temp.id(value) and flow through program while checking left and right nodes
                      temp = temp.left;
                   else
                      temp = temp.right;           
              }
              
-             if (parent.id > id)
+             if (parent.id > id)              // assign the real place to that comming node
                  
                  parent.left = newnode;
              else
                  parent.right = newnode;             
                       
-             count++;    
+             count++;                     //increment count
             
             } 
             
@@ -123,20 +123,20 @@ public class Tree {
 //        
 //                                  }
     
-    public boolean searchNode(int id){
+    public boolean searchNode(int id){                   //search node with getting parameter from home
          
-        boolean status = false;
-        TNode temp = root;
-        System.out.println("root id = "+temp.id);
+        boolean status = false;                          //to get return 
+        TNode temp = root;                               //root element get in to the variable as temp
+        System.out.println("root id = "+temp.id);      
         
         
-        while(temp!=null){
+        while(temp!=null){                          //checking whther till there is no root
             
             if(temp.id == id)      
-                                              
+                                              //we can assume there is an one node hi hi hi
                 break;        
                 
-            else{
+            else{                              // checking left to righ elements
                 if(temp.id>id)
                     temp = temp.left;
                 else 
@@ -160,26 +160,34 @@ public class Tree {
         
         
                                   }
-    public void delete(int k)
+                                  
+    public void delete(int k)                //get parameter from home eith search text box                   
      {
          if (isEmpty())
              //System.out.println("Tree is Empty");
-             JOptionPane.showMessageDialog(null,"Tree is Empty");
+             JOptionPane.showMessageDialog(null,"Tree is Empty");    //
          else if (searchNode(k) != true)
-             //System.out.println(+k+" "+"is not in the tree");
+             System.out.println(+k+" "+"is not in the tree");          //check there is this node so pass the parameter to serach method
          else
          {
-             root = delete(root, k);
+             root = delete(root, k);                                 //else pass the element to delete method 
              //System.out.println(k+ " deleted from the tree");
        
          }
          
      }
      
-     private TNode delete(TNode root, int k)
+     private TNode delete(TNode root, int k)    //getting data from void type delete method
      {
-         TNode p, p2, n;
-         if (root.getId() == k)
+         TNode p, p2, n                        //allocate the variables
+         if (root.getId() == k) 
+         
+         {
+             TNode left, right;
+             left = root.getLeft();
+             right = root.getRight();
+             
+         }
          
          
      }
