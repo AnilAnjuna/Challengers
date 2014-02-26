@@ -192,7 +192,12 @@ public class Tree {
              {
                  p = right;                      //assigning right element
                  return p;
-             }     
+             }
+             else if (right == null)            //if right null there is only left
+             {
+                 p = left;                      //assigning left
+                 return p;
+             }
              
          }
          
