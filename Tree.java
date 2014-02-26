@@ -87,14 +87,14 @@ public class Tree {
     
     public void postOrderTraverse(TNode n){    //begining postorder traverse
 //            
-            if (n == null)
+            if (n == null)                      //check whether node is null
             return;
             else
               {
-//                postOrderTraverse(n.left);
-//                postOrderTraverse(n.right);
-//                System.out.print(n.id + "\t");
-//                
+                postOrderTraverse(n.left);
+                postOrderTraverse(n.right);    //retieve element according to preordertravaerse 
+                System.out.print(n.id + "\t");
+                
                }  
                                          }
    
