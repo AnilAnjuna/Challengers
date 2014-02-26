@@ -62,15 +62,15 @@ public class Tree {
 
     
      public void inOrderTraverse(TNode n){   //begining inorder traverse
-//        if (n == null)
-//            return;
-//            else
-//              {
+        if (n == null)                        //check whether node is null
+             return;
+             else
+              {
 //                inOrderTraverse(n.left);
 //                System.out.print(n.id + "\t");                
 //                inOrderTraverse(n.right);                
 //                
-//              }          
+              }          
                                          }
 //    
 //     public void preOrderTraverse(TNode n){
