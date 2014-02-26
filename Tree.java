@@ -241,6 +241,11 @@ public class Tree {
 //        return temp; 
 //        
 //                              }
+
+ public TNode getRoot(){
+         
+         return root;
+     }
     
     
     
