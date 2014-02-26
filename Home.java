@@ -423,7 +423,7 @@ public class Home extends javax.swing.JFrame {
         
    
         int t1 = Integer.parseInt(txtsearch.getText());     // get searh element from textfield
-        boolean findingnode = mytree.searchNode(t1);          // pass to Tree class
+        TNode findingnode = mytree.searchNode(t1);          // pass to Tree class
         
 //        if(findingnode != null){            
 //                        System.out.println(findingnode.id);
