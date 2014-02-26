@@ -186,8 +186,13 @@ public class Tree {
              TNode left, right;
              left = root.getLeft();                 //get left element to this variable
              right = root.getRight();               //get right
-              if (left == null && right == null)    //check those are null
+             if (left == null && right == null)    //check those are null
                  return null;
+             else if (left == null)             //if lef null there is only right
+             {
+                 p = right;                      //assigning right element
+                 return p;
+             }     
              
          }
          
