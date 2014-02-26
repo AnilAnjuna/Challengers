@@ -500,8 +500,8 @@ public class Home extends javax.swing.JFrame {
 //          
 //                                          }
 //        
-//        System.out.println("\n-----------------------------------------");
-//        mytree.preOrderTraverse(mytree.root);  
+       System.out.println("\n-----------------------------------------");
+       mytree.preOrderTraverse(mytree.root);  
 //       
     }                                           
 
