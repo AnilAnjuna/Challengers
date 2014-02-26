@@ -174,7 +174,13 @@ public class Tree {
        
          }
          
-     }     
+     }
+     
+     private TNode delete(TNode root, int k)
+     {
+         
+         
+     }
     
    
     
