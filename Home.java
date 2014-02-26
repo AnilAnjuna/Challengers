@@ -517,8 +517,8 @@ public class Home extends javax.swing.JFrame {
 //          
 //                                          } 
 //        
-//        System.out.println("\n-----------------------------------------");
-//        mytree.postOrderTraverse(mytree.root); 
+        System.out.println("\n-----------------------------------------");
+        mytree.postOrderTraverse(mytree.root); 
     }                                            
 
     private void btndeleteActionPerformed(java.awt.event.ActionEvent evt) {                                          
