@@ -372,6 +372,11 @@ public class Home extends javax.swing.JFrame {
         
         TNode result = mytree.searchNode(id);    // to check whether assigning isbn is currently in tree
         
+        if(result != null){        // if search method in tree output is a Node
+            
+            
+        }
+        
     //    mytree.insert(id,fname,sname,title,bname);
         
      //   TNode t1 = new TNode(id,fname,sname,title,bname,null,null);
