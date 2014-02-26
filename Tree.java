@@ -60,8 +60,8 @@ public class Tree {
         }
     
 
-//    
-//    public void inOrderTraverse(TNode n){
+    
+     public void inOrderTraverse(TNode n){   //begining inorder traverse
 //        if (n == null)
 //            return;
 //            else
@@ -71,7 +71,7 @@ public class Tree {
 //                inOrderTraverse(n.right);                
 //                
 //              }          
-//                                         }
+                                         }
 //    
 //     public void preOrderTraverse(TNode n){
 //        if (n == null)
