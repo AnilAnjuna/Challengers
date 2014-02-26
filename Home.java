@@ -428,8 +428,8 @@ public class Home extends javax.swing.JFrame {
     if(findingnode != null){            
 //                        System.out.println(findingnode.id);     // retrieve data and view
 //            System.out.println("\n ID found complete"); 
-             JOptionPane.showMessageDialog(null,"Found Element "+" : "+findingnode.getId()+", "+findingnode.getFname()+", "+findingnode.getSname()+", "+findingnode.getTitle()+", "+findingnode.getBname());
-//                
+             //JOptionPane.showMessageDialog(null,"Found Element "+" : "+findingnode.getId()+", "+findingnode.getFname()+", "+findingnode.getSname()+", "+findingnode.getTitle()+", "+findingnode.getBname());
+             JOptionPane.showMessageDialog(null,"Found Element "+"\n-------------------------"+"\n ISBN - "+findingnode.getId()+"\n FName -"+findingnode.getFname()+"\n SName - "+findingnode.getSname()+"\n Title - "+findingnode.getTitle()+"\n BName - "+findingnode.getBname());    
                                }
 //        
         else
