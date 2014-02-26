@@ -178,6 +178,7 @@ public class Tree {
      
      private TNode delete(TNode root, int k)
      {
+         TNode p, p2, n;
          
          
      }
