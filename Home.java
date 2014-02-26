@@ -434,6 +434,7 @@ public class Home extends javax.swing.JFrame {
 //        
         else
 //             System.out.println("\n ID found not complete");
+            JOptionPane.showMessageDialog(null,"\n ID is not in current Tree");       
         
         
         
