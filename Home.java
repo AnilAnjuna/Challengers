@@ -426,8 +426,9 @@ public class Home extends javax.swing.JFrame {
         TNode findingnode = mytree.searchNode(t1);          // pass to Tree class
         
     if(findingnode != null){            
-//                        System.out.println(findingnode.id);
+//                        System.out.println(findingnode.id);     // retrieve data and view
 //            System.out.println("\n ID found complete"); 
+             JOptionPane.showMessageDialog(null,"Found Element "+" : "+findingnode.getId()+", "+findingnode.getFname()+", "+findingnode.getSname()+", "+findingnode.getTitle()+", "+findingnode.getBname());
 //                
                                }
 //        
