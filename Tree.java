@@ -78,14 +78,14 @@ public class Tree {
             return;
             else
               {
-                System.out.print(n.id + "\t");
+                System.out.print(n.id + "\t");   //retieve element according to preordertravaerse 
                 postOrderTraverse(n.left);
                 postOrderTraverse(n.right);                
                 
                }          
                                         }
-//    
-//    public void postOrderTraverse(TNode n){
+    
+    public void postOrderTraverse(TNode n){    //begining postorder traverse
 //            
 //            if (n == null)
 //            return;
@@ -96,8 +96,8 @@ public class Tree {
 //                System.out.print(n.id + "\t");
 //                
 //                }  
-//                                          }
-//    
+                                         }
+   
 
     
 //    public TNode searchNode(int id){
