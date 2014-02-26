@@ -373,7 +373,8 @@ public class Home extends javax.swing.JFrame {
         TNode result = mytree.searchNode(id);    // to check whether assigning isbn is currently in tree
         
         if(result != null){        // if search method in tree output is a Node
-            
+        
+        JOptionPane.showMessageDialog(null,+id+" "+"ISBN is already inserted");  //view that feedback    
             
         }
         
