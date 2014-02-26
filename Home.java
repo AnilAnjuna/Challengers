@@ -555,7 +555,16 @@ public class Home extends javax.swing.JFrame {
 //        
 //        
 //        
-    }                                         
+    } 
+    
+     public void fillTable(){ 
+        
+        model2=new DefaultTableModel(types,title2);
+        tableBook.setModel(model2);
+        TNode root=mytree.getRoot();                   //assign root node
+        inOrder(root);                                 //pasising value to root node
+        
+                            }
 
     private void tableBookMouseClicked(java.awt.event.MouseEvent evt) {                                       
        
