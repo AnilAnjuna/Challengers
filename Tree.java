@@ -73,7 +73,7 @@ public class Tree {
               }          
                                          }
 //    
-//     public void preOrderTraverse(TNode n){
+     public void preOrderTraverse(TNode n){     //begining preorder traverse
 //        if (n == null)
 //            return;
 //            else
@@ -83,7 +83,7 @@ public class Tree {
 //                postOrderTraverse(n.right);                
 //                
 //              }          
-//                                         }
+                                        }
 //    
 //    public void postOrderTraverse(TNode n){
 //            
