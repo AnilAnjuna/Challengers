@@ -66,10 +66,10 @@ public class Tree {
              return;
              else
               {
-//                inOrderTraverse(n.left);
-//                System.out.print(n.id + "\t");                
-//                inOrderTraverse(n.right);                
-//                
+                  inOrderTraverse(n.left);          //retieve element according to inordertravaerse 
+                  System.out.print(n.id + "\t");                
+                  inOrderTraverse(n.right);                
+                
               }          
                                          }
 //    
